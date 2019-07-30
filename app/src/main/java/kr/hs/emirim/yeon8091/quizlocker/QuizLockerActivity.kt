@@ -26,6 +26,7 @@ class QuizLockerActivity : AppCompatActivity() {
             window.addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD);
         }
         window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
         setContentView(R.layout.activity_quiz_locker)
 
         val json =assets.open("capital.json").reader().readText()
