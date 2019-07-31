@@ -13,13 +13,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/correctCountLabel" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:textSize="24sp" app:layout_constraintBottom_toTopOf="@+id/worngCountLabel"
+            android:textSize="24sp" app:layout_constraintBottom_toTopOf="@+id/wrongCountLabel"
             android:layout_marginBottom="8dp"/>
     <TextView
             android:text="오답횟수: 3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/worngCountLabel" android:textSize="24sp"
+            android:id="@+id/wrongCountLabel" android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/quizLabel" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             android:layout_marginBottom="32dp"/>

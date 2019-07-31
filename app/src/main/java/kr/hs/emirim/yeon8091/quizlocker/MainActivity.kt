@@ -1,5 +1,6 @@
 package kr.hs.emirim.yeon8091.quizlocker
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.support.v7.app.AppCompatActivity
@@ -7,6 +8,7 @@ import android.os.Bundle
 import android.preference.MultiSelectListPreference
 import android.preference.PreferenceFragment
 import android.preference.SwitchPreference
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     val fragment = MyPreferenceFragment()
@@ -15,6 +17,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         fragmentManager.beginTransaction().replace(R.id.preferenceContent, fragment).commit()
+
+        initButton.setOnClickListener { initAnswerCount() }
+    }
+
+    fun initAnswerCount(){
+        val correctAnswerPref = getSharedPreferences("correctAnswer",Context.MODE_PRIVATE)
+        val wrongAnswerPref  = getSharedPreferences("wrongAnswer",Context.MODE_PRIVATE)
+
+        correctAnswerPref.edit().clear().apply()
+        wrongAnswerPref.edit().clear().apply()
+
     }
 
     class MyPreferenceFragment : PreferenceFragment() {
